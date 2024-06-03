@@ -15,6 +15,10 @@ app.use(cors());
 app.use('/api/var', contactRoute); 
 app.use('/api/var', brochureRoute);
 app.use('/api/var', caseStudyRoute);
+app.use(express.static("./beydest/build"));
+app.get("*",(req,res)=>{
+    res.sendFile(path.resolve(__dirname,"beydest", "build", "index.html"))
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
