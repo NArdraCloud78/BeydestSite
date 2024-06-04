@@ -11,7 +11,11 @@ const app = express();
 const port = process.env.PORT || 5000; 
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use('/api/var', contactRoute); 
 app.use('/api/var', brochureRoute);
 app.use('/api/var', caseStudyRoute);
