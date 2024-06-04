@@ -24,8 +24,8 @@ function Footer() {
     setLoading(true);
     try {
       const url = downloadType === 'brochure'
-        ? 'http://localhost:5000/api/var/brochure'
-        : 'http://localhost:5000/api/var/casestudy';
+        ? 'https://beydestsite.onrender.com/api/var/brochure'
+        : 'https://beydestsite.onrender.com/api/var/casestudy';
 
       const response = await axios.post(url, formData);
       if (response.status === 200) {

@@ -44,7 +44,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://beydestapp-default-rtdb.firebaseio.com/contact.json', formData)
+    axios.post('https://beydestsite.onrender.com/api/var/contact', formData)
       .then((response) => {
         toast.success('Form submitted successfully!', {
           position: window.innerWidth <= 768 ? "bottom-center" : "top-right",
