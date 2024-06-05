@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = () => {
   const navigate = useNavigate();
-
+const [loading,setLoading]=useState(true)
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -43,12 +43,27 @@ const ContactForm = () => {
   };
 
   const handleSubmit = (e) => {
+    
     e.preventDefault();
-    axios.post('https://beydestsite.onrender.com/api/var/contact', formData)
-      .then((response) => {
-        toast.success('Form submitted successfully!', {
-          position: window.innerWidth <= 768 ? "bottom-center" : "top-right",
-          autoClose: 5000,
+    try {
+
+      const response = axios.post('https://beydestsite.onrender.com/api/var/contact', formData);
+
+      if (response.status === 200) {
+        setLoading(false);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          companyName: '',
+          jobTitle: '',
+          email: '',
+          contactNumber: '',
+          message: '',
+        });
+
+        toast.success("Thank you for contacting us ", {
+          position: "top-right",
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -56,64 +71,79 @@ const ContactForm = () => {
           progress: undefined,
         });
 
-        navigate('/');
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error('There was an error!', error);
-        toast.error('Error submitting form. Please try again.', {
-          position: window.innerWidth <= 768 ? "bottom-center" : "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+
+
+      }
+      navigate('/');
+
+
+
+
+    }
+    catch (error) {
+      setLoading(false)
+      console.error('There was an error!', error);
+      toast.error('Error submitting form. Please try again.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
       });
+    }
   };
 
   return (
     <div className="contact-page">
+      <ToastContainer />
       <div className="contact-header">
         <h1 className="contact-title animate__animated animate__fadeInDown">Get in Touch</h1>
         <p className="contact-subtitle animate__animated animate__fadeInUp">We'd love to hear from you</p>
       </div>
       <div className="contact-form-container">
+      {loading && (
+                <div className="loading-spinner">
+                  <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+              )}
         <form className="contact-form animate__animated animate__fadeInUp" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
-      </div>
-       <div className="form-group">
-         <label htmlFor="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="companyName">Company Name</label>
-         <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} />
-       </div>
-      <div className="form-group">
-         <label htmlFor="jobTitle">Job Title</label>
-          <input type="text" id="jobTitle" name="jobTitle" value={formData.jobTitle} onChange={handleChange} />
+          <div className="form-group">
+            <label htmlFor="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
           </div>
-        <div className="form-group">
-                      <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-         </div>
-       <div className="form-group">
-        <label htmlFor="contactNumber">Contact Number</label>
-         <input type="text" id="contactNumber" name="contactNumber" value={formData.contactNumber} onChange={handleChange} required />
-      </div>
-        <div className="form-group">
-          <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" rows="5" value={formData.message} onChange={handleChange} required></textarea>
-        </div>
-        <div className="form-group">
-         <label>Services</label>
-           <div>
-             <label htmlFor="service1">
-              <input
+          <div className="form-group">
+            <label htmlFor="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="companyName">Company Name</label>
+            <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="jobTitle">Job Title</label>
+            <input type="text" id="jobTitle" name="jobTitle" value={formData.jobTitle} onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="contactNumber">Contact Number</label>
+            <input type="text" id="contactNumber" name="contactNumber" value={formData.contactNumber} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" rows="5" value={formData.message} onChange={handleChange} required></textarea>
+          </div>
+          <div className="form-group">
+            <label>Services</label>
+            <div>
+              <label htmlFor="service1">
+                <input
                   type="checkbox"
                   id="service1"
                   name="services"
@@ -172,7 +202,7 @@ const ContactForm = () => {
               <option value="Both">Both</option>
             </select>
           </div>
-          
+
           <button type="submit" className="btn-submit">Send Message</button>
         </form>
       </div>
@@ -180,16 +210,10 @@ const ContactForm = () => {
   );
 };
 
-const ContactPage = () => {
-  return (
-    <div>
-      <ToastContainer />
-      <ContactForm />
-    </div>
-  );
-};
+export default ContactForm;
 
-export default ContactPage;
+
+
 
 
 

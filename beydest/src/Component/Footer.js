@@ -87,8 +87,8 @@ function Footer() {
         <div className="footer-column">
           <h3>Get Links</h3>
           <ul>
-            <li><a href='#' onClick={() => openModal('brochure')}>Download Brochure</a></li>
-            <li><a href="#" onClick={() => openModal('casestudy')}>Download Case Study</a></li>
+            <li><Link onClick={() => openModal('brochure')}>Download Brochure</Link></li>
+            <li><Link  onClick={() => openModal('casestudy')}>Download Case Study</Link></li>
           </ul>
         </div>
         <div className="footer-column">
