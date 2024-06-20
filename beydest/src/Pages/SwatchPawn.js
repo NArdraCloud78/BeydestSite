@@ -17,7 +17,7 @@ function SwatchPawn() {
         <div className="carousel-overlay-content">
           <h5>Taking Serious Action Against Air Pollution</h5>
           <p>
-            Swatch Pawan is committed to addressing
+            Swachh Pawan Jan Jan™ is a mission to address
             air pollution through innovative solutions
             and community action.
           </p>
@@ -31,7 +31,7 @@ function SwatchPawn() {
           <h5>Innovative Technologies for a Cleaner World</h5>
           <p>
             We use cutting-edge technology and
-            natural mosses to
+            sustainable bio-materials to
             create sustainable air purification systems.
           </p>
         </div>
@@ -58,7 +58,7 @@ function SwatchPawn() {
     <div className="container">
       <h2 className="theory-title animate__animated animate__fadeInDown">We Grow Fresh AIR</h2>
       <p className="theory-description animate__animated animate__fadeInUp">
-        In partnership with Indian Oil Corporation Limited, Beydest AIR has developed India's first sustainable air purification technology. It absorbs harmful pollutants, bio-aerosols, and aromatic hydrocarbons, significantly improving air quality. Our system is more efficient than other technologies on the market, including HEPA-based systems.
+        In partnership with Indian Oil Corporation Limited, Beydest AIR has developed India's first sustainable air purification technology. It absorbs harmful pollutants, bio-aerosols, and aromatic hydrocarbons, significantly improving air quality. Our system is more efficient than other technologies on the market, including ESD, Algae or HEPA-based systems.
       </p>
       <div className="theory-grid">
         {/* Your theory cards go here */}

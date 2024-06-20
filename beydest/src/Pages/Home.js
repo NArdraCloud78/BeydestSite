@@ -36,7 +36,7 @@ function Home() {
         <div class="product-row product-row-reverse">
   <div class="product-content animate__animated animate__fadeInRight">
     <h3>Beydest AIR 2.0 Delhi 2023 Launch</h3>
-    <p>The Beydest AIR 2.0, launched in Delhi in 2023, represents the pinnacle of our innovative air purification technology. This state-of-the-art model features dimensions of 26ft by 8ft and is equipped with 8 HBOG panels specifically designed for direct carbon capture. It is particularly effective in industrial settings such as refineries, where it can significantly reduce harmful emissions and improve air quality. With its advanced capabilities, the Beydest AIR 2.0 is set to revolutionize how urban environments manage pollution and maintain cleaner air standards.</p>
+    <p>The Beydest AIR 2.0, to be launched in Delhi in 2024, represents the pinnacle of our innovative air purification technology. This state-of-the-art model features dimensions of 26ft by 8ft and is equipped with 8 HBOG™ panels specifically designed for direct carbon capture. It is particularly effective in industrial settings such as refineries, where it can significantly reduce harmful emissions and improve air quality. With its advanced capabilities, the Beydest AIR 2.0 is set to revolutionize the way urban environments manage pollution and maintain cleaner air standards.</p>
   </div>
   <div class="product-image">
     <img src={slide4} alt="Product four Image"/>
@@ -46,7 +46,7 @@ function Home() {
   <div class="product-row">
 
     <div class="product-content animate__animated animate__fadeInLeft">
-      <h3>Delhi: 75% Efficiency, 0.7 Lakh cu-m/day, 15 Meter Range</h3>
+      <h3>Delhi: 75% Efficiency in AQI improvement, 0.7 Lakh cu-m/day, 15 Meter Range</h3>
       <p>Known for its advanced features and user-friendly interface, the Delhi model offers a perfect balance of functionality and ease of use. With a daily capacity of 0.7 lakh cubic meters and a 15 meter range, it is ideal for complex operations requiring high efficiency.</p>
     </div>
     <div class="product-image">
@@ -56,7 +56,7 @@ function Home() {
 
   <div class="product-row product-row-reverse">
     <div class="product-content animate__animated animate__fadeInRight">
-      <h3>Faridabad: 80% Efficiency, 0.3 Lakh cu-m/day, 5 Meter Range</h3>
+      <h3>Faridabad: 80% Efficiency in AQI improvement, 0.3 Lakh cu-m/day, 5 Meter Range</h3>
       <p>The Faridabad model offers exceptional reliability and durability. It is perfect for long-term use with a daily capacity of 0.3 lakh cubic meters and a 5 meter range, providing consistent output for your operations.</p>
     </div>
     <div class="product-image">
@@ -66,7 +66,7 @@ function Home() {
 
   <div class="product-row">
     <div class="product-content animate__animated animate__fadeInLeft">
-      <h3>Meerut: 75% Efficiency, 0.5 Lakh cu-m/day, 10 Meter Range</h3>
+      <h3>Meerut: 75% Efficiency in AQI improvement, 0.5 Lakh cu-m/day, 10 Meter Range</h3>
       <p>Our Meerut model is designed to deliver high efficiency and performance. With a daily capacity of 0.5 lakh cubic meters and a range of 10 meters, it is equipped with the latest technology to ensure optimal results for your needs.</p>
     </div>
     <div class="product-image">
@@ -89,7 +89,7 @@ function Home() {
     <div className="row">
       {[
         { img: absorf, title: 'Absorbs Toxic Pollutants', text: 'Effectively removes harmful chemicals from the environment.' },
-        { img: biode, title: '100% Natural and Biodegradable', text: 'Patented HBOG Technology - Sustainable AIR cleaning at scale.' },
+        { img: biode, title: '100% Natural and Biodegradable', text: 'Patented HBOG™ Technology - Sustainable AIR cleaning at scale.' },
         { img: oxygen, title: 'Produces Pure Oxygen', text: 'Patented technology - Generates clean oxygen, improving air quality.' },
         { img: grid, title: '100% Off-Grid Power', text: 'Operates independently of the traditional power grid.' },
         { img: cloudanalytics, title: '24/7 AI Cloud Analytics', text: 'Provides continuous data analysis with Patented autonomous operating system.' },
@@ -128,13 +128,13 @@ function Home() {
     <h2>Awards and Recognition</h2>
     <div className="row">
       {[
-        {img: startup2022, text: 'Beydest provided an exceptional service and I couldn\'t be happier with the results!', name: 'Startup India Award 2022' },
-        { img: assam, text: 'Highly recommend Beydest for their professionalism and quality work.', name: 'NRL Assam 2022' },
+        {img: startup2022, text: 'Beydest provided an exceptional service in sustainability sector - Hnble Piyush Goyal', name: 'Startup India Award 2022' },
+        { img: assam, text: 'Highly recommend Beydest for their professionalism and quality work in O&NG Sector.', name: 'NRL Assam 2022' },
        
-        { img: indianoil, text: 'Highly recommend Beydest for their professionalism and quality work.', name: 'Indian Oil Startup Scheme 2019' },
+        { img: indianoil, text: 'Beydest team has shown their research calibre and ability to produce results with cutting edge technological innovations.', name: 'Indian Oil Startup Scheme 2019' },
         { img: cnbc, text: 'The team at Beydest is fantastic. They exceeded our expectations at every turn.', name: 'CNBC Young Turks 2022' },
-        { img: president, text: 'Highly recommend Beydest for their professionalism and quality work.', name: 'President of India, Recogmition' },
-        { img: smogathon, text: 'Highly recommend Beydest for their professionalism and quality work.', name: 'Smogathon - Poland 2018' },
+        { img: president, text: 'Their team is well balanced with women leading with an example, best wishes for their future. ', name: 'President of India, Recognition' },
+        { img: smogathon, text: 'Beydest AIR is one of the best sustainable air cleaning solution available in commercial market.', name: 'Smogathon - Poland 2018' },
       ].map((testimonial, index) => (
         <div className="col-md-4" key={index}>
           <div className="card testimonial-card">
