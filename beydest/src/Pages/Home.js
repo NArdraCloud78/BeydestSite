@@ -35,7 +35,7 @@ function Home() {
         <h2  className='text-center' > Technology is protected by 8 IP including 4 Patents</h2>
         <div class="product-row product-row-reverse">
   <div class="product-content animate__animated animate__fadeInRight">
-    <h3>Beydest AIR 2.0 Delhi 2023 Launch</h3>
+    <h3>Beydest AIR 2.0 Delhi 2024 Launch</h3>
     <p>The Beydest AIR 2.0, to be launched in Delhi in 2024, represents the pinnacle of our innovative air purification technology. This state-of-the-art model features dimensions of 26ft by 8ft and is equipped with 8 HBOG™ panels specifically designed for direct carbon capture. It is particularly effective in industrial settings such as refineries, where it can significantly reduce harmful emissions and improve air quality. With its advanced capabilities, the Beydest AIR 2.0 is set to revolutionize the way urban environments manage pollution and maintain cleaner air standards.</p>
   </div>
   <div class="product-image">

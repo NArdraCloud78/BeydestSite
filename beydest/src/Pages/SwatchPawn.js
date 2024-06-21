@@ -58,7 +58,7 @@ function SwatchPawn() {
     <div className="container">
       <h2 className="theory-title animate__animated animate__fadeInDown">We Grow Fresh AIR</h2>
       <p className="theory-description animate__animated animate__fadeInUp">
-        In partnership with Indian Oil Corporation Limited, Beydest AIR has developed India's first sustainable air purification technology. It absorbs harmful pollutants, bio-aerosols, and aromatic hydrocarbons, significantly improving air quality. Our system is more efficient than other technologies on the market, including ESD, Algae or HEPA-based systems.
+        In partnership with Indian Oil Corporation Limited, Beydest AIR has developed HBOG™ technology, it's India's first sustainable air purification technology. It absorbs harmful pollutants, bio-aerosols, and aromatic hydrocarbons, significantly improving air quality. Our system is more efficient than other technologies in the market, including ESD, Algae or HEPA-based systems.
       </p>
       <div className="theory-grid">
         {/* Your theory cards go here */}

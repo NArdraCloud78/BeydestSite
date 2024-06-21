@@ -4,7 +4,6 @@ import teamImage from '../Assist/team.jpeg';
 import missionImage from '../Assist/mission.gif';
 import valuesImage from '../Assist/value.jpg';
 import teamMember1 from '../Assist/pranjalSir.jpg';
-import teamMember2 from '../Assist/ranveerSir.jpg';
 import teamMember3 from '../Assist/smriti.jpg';
 import teamMember4 from '../Assist/ManojJain.jpeg';
 import teamMember5 from '../Assist/RajivTomar.jpeg';
@@ -25,7 +24,7 @@ function AboutUs() {
         <div className="aboutus-overlay"></div>
         <div className="container">
           <h1 className="aboutus-hero-title animate__animated animate__fadeInDown">Solving a big problem</h1>
-          <p className="aboutus-hero-subtitle animate__animated animate__fadeInUp">India's First public air purifier with a mission.</p>
+          <p className="aboutus-hero-subtitle animate__animated animate__fadeInUp">India's First public air purifier with a mission. Swachh Pawan Jan Jan™</p>
         </div>
       </section>
 
@@ -37,7 +36,7 @@ function AboutUs() {
             </div>
             <div className="content-text">
               <h2>Our Journey</h2>
-              <p>Started as a research project in 2017, supported by research Beydest is building moon shoot solutions to reverse climate change by leveraging our expertise in industrial Biotechnology, material science and AI. We are empowering organzations to foster collaborative thinking to further drive innovations in Carbon negativity and adopting sustainability.</p>
+              <p>Started as a research project in 2017, supported by researchers from Columbia University, Oxford Univerity, IIT's, IOCL R&D and NRDC - Beydest is building moon shoot solutions to reverse climate change by leveraging our expertise in industrial Biotechnology, material science and AI. We are empowering organzations to foster collaborative thinking to further drive innovations in Carbon negativity and adopting global sustainability.</p>
               <p></p>
             </div>
           </div>
@@ -48,8 +47,8 @@ function AboutUs() {
             </div>
             <div className="content-text">
               <h2>Our Vision and Mission</h2>
-              <p> Meet present Climate change needs without compromising the needs of Future Generations. </p>
-              <p> Reverse Climate change with the help of AI and Bio technology.</p>
+              <p> Meet present Climate change needs without compromising the needs of the Next Billion. </p>
+              <p> Reverse Climate change with Bio technology, AI and Design thinking.</p>
             </div>
           </div>
 
@@ -76,9 +75,8 @@ function AboutUs() {
             {[
               { name: 'Pranjal Yadav', role: 'Co-Founder & Chief Researcher, System & AI Engineer', img: teamMember1, linkedin: 'https://www.linkedin.com/in/pranjal-narbir-yadav-268589229/' },
               { name: 'Ar. Smriti', role: 'Co-Founder & Design Head, Lead Architect', img: teamMember3 , linkedin: 'https://www.linkedin.com/in/smriti-yadav-433822190/' },
-              { name: 'Ranveer Singh', role: 'Head of R&D and Production', img:  teamMember2 , linkedin: 'https://www.linkedin.com/in/ranveer-singh-saini-10083042/' },
-              { name: 'Manoj Jain', role: 'Head of operations', img:  teamMember4 , linkedin: '' },
-              { name: 'Rajiv Tomar', role: 'Head of Finance', img:  teamMember5 , linkedin: '' },
+              { name: 'Manoj Jain', role: 'Head of Finance', img:  teamMember4 , linkedin: '' },
+              { name: 'Rajiv Tomar', role: 'Head of Operations', img:  teamMember5 , linkedin: '' },
               
 
             ].map((member, index) => (
@@ -106,6 +104,9 @@ function AboutUs() {
             <img src={logo5} alt="Logo 5" className="logo animate__animated animate__zoomIn" />
             <img src={logo6} alt="Logo 6" className="logo animate__animated animate__zoomIn" />
             <img src={logo7} alt="Logo 7" className="logo animate__animated animate__zoomIn" />
+            <img src={logo7} alt="Smogathon" className="logo animate__animated animate__zoomIn" />
+            <img src={logo7} alt="Tie" className="logo animate__animated animate__zoomIn" />
+            <img src={logo7} alt="CNBC" className="logo animate__animated animate__zoomIn" />
           </div>
         </div>
       </section>
