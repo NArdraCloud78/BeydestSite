@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './footer.css';
-import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import brochure from '../Assist/brochure.pdf';
+import caseStudy from '../Assist/casestudy.pdf';
 
 function Footer() {
   const [showModal, setShowModal] = useState(false);
@@ -14,6 +15,7 @@ function Footer() {
     phoneNumber: ''
   });
   const [downloadType, setDownloadType] = useState('');
+  const [downloadUrl, setDownloadUrl] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,28 +25,30 @@ function Footer() {
     e.preventDefault();
     setLoading(true);
     try {
-      const url = downloadType === 'brochure'
-        ? 'https://beydestsite.onrender.com/api/var/brochure'
-        : 'https://beydestsite.onrender.com/api/var/casestudy';
+      const url = downloadType === 'brochure' ? brochure : caseStudy;
+      setDownloadUrl(url);
 
-      const response = await axios.post(url, formData);
-      if (response.status === 200) {
-        setFormData({
-          name: '',
-          email: '',
-          phoneNumber: ''
-        });
-        setShowModal(false);
-        toast.success(`Check your email for the ${downloadType} download link!`, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-      }
+      setFormData({
+        name: '',
+        email: '',
+        phoneNumber: ''
+      });
+      setShowModal(false);
+      toast.success(`Your ${downloadType} is ready for download!`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
+      // Trigger the download
+      setTimeout(() => {
+        document.getElementById('hiddenDownloadLink').click();
+      }, 1000);
+
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error('Error submitting form. Please try again.', {
@@ -88,7 +92,7 @@ function Footer() {
           <h3>Get Links</h3>
           <ul>
             <li><Link onClick={() => openModal('brochure')}>Download Brochure</Link></li>
-            <li><Link  onClick={() => openModal('casestudy')}>Download Case Study</Link></li>
+            <li><Link onClick={() => openModal('casestudy')}>Download Case Study</Link></li>
           </ul>
         </div>
         <div className="footer-column">
@@ -158,6 +162,7 @@ function Footer() {
           </div>
         </div>
       </div>
+      <a id="hiddenDownloadLink" href={downloadUrl} download style={{ display: 'none' }}>Download</a>
     </footer>
   );
 }
