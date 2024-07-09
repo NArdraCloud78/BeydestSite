@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = () => {
   const navigate = useNavigate();
-const [loading,setLoading]=useState(true)
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -24,33 +24,32 @@ const [loading,setLoading]=useState(true)
     const { name, value, type, checked } = e.target;
     if (type === 'checkbox') {
       if (checked) {
-        setFormData({
-          ...formData,
-          services: [...formData.services, value],
-        });
+        setFormData((prevData) => ({
+          ...prevData,
+          services: [...prevData.services, value],
+        }));
       } else {
-        setFormData({
-          ...formData,
-          services: formData.services.filter((service) => service !== value),
-        });
+        setFormData((prevData) => ({
+          ...prevData,
+          services: prevData.services.filter((service) => service !== value),
+        }));
       }
     } else {
-      setFormData({
-        ...formData,
+      setFormData((prevData) => ({
+        ...prevData,
         [name]: value,
-      });
+      }));
     }
   };
 
-  const handleSubmit = (e) => {
-    
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
+    setLoading(true);
 
-      const response = axios.post('https://beydestsite.onrender.com/api/var/contact', formData);
+    try {
+      const response = await axios.post('https://beydestsite.onrender.com/api/var/contact', formData);
 
       if (response.status === 200) {
-        setLoading(false);
         setFormData({
           firstName: '',
           lastName: '',
@@ -59,9 +58,11 @@ const [loading,setLoading]=useState(true)
           email: '',
           contactNumber: '',
           message: '',
+          services: [],
+          installation_area: 'Indoor',
         });
 
-        toast.success("Thank you for contacting us ", {
+        toast.success("Thank you for contacting us", {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -71,17 +72,9 @@ const [loading,setLoading]=useState(true)
           progress: undefined,
         });
 
-
-
+        navigate('/');
       }
-      navigate('/');
-
-
-
-
-    }
-    catch (error) {
-      setLoading(false)
+    } catch (error) {
       console.error('There was an error!', error);
       toast.error('Error submitting form. Please try again.', {
         position: "top-right",
@@ -92,6 +85,8 @@ const [loading,setLoading]=useState(true)
         draggable: true,
         progress: undefined,
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -103,13 +98,13 @@ const [loading,setLoading]=useState(true)
         <p className="contact-subtitle animate__animated animate__fadeInUp">We'd love to hear from you</p>
       </div>
       <div className="contact-form-container">
-      {loading && (
-                <div className="loading-spinner">
-                  <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                  </div>
-                </div>
-              )}
+        {loading && (
+          <div className="loading-spinner">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )}
         <form className="contact-form animate__animated animate__fadeInUp" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="firstName">First Name</label>
@@ -211,23 +206,3 @@ const [loading,setLoading]=useState(true)
 };
 
 export default ContactForm;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

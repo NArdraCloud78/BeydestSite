@@ -104,9 +104,7 @@ function AboutUs() {
             <img src={logo5} alt="Logo 5" className="logo animate__animated animate__zoomIn" />
             <img src={logo6} alt="Logo 6" className="logo animate__animated animate__zoomIn" />
             <img src={logo7} alt="Logo 7" className="logo animate__animated animate__zoomIn" />
-            <img src={logo7} alt="Smogathon" className="logo animate__animated animate__zoomIn" />
-            <img src={logo7} alt="Tie" className="logo animate__animated animate__zoomIn" />
-            <img src={logo7} alt="CNBC" className="logo animate__animated animate__zoomIn" />
+            
           </div>
         </div>
       </section>
